@@ -16,6 +16,28 @@
         <h1> <a href="login_page.php">Log-in page</a> </h1>
         <p> Look for everything you need </p>
         <img src="Images/damn_yes.jpg" height="400" width="400" alt="herewego.jpg">
+        <?php
+$servername = "localhost";
+$username = "root";
+$password = "390iva200";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create database
+$sql = "CREATE DATABASE CasketDB";
+if (mysqli_query($conn, $sql)) {
+  echo "Database created successfully";
+} else {
+  echo "Error creating database: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
 
         <script> 
 

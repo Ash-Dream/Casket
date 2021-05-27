@@ -12,19 +12,29 @@
 
     <body>
         
-    <form method="get" action="engine.php" id="authorisation" onsubmit="return username_password_check();">
-        <div>
-            <p id="username">Enter your username:
-                <input type="username" name="password" id="password">
-            </p>
-            <p id="password">Enter your password:
-                <input type="password" name="password" id="password">
-            </p>
-            <input type="submit">
-        </div>
-    </form>
+        <form method="post" action="login_engine.php">  
+            Name: <input type="text" name="name" value="">
+            <br><br>
 
-    <h1> Back to main page -> <a href="main_page.html">"CASKET"</a></h1> 
+            E-mail: <input type="text" name="email" value="">
+            <br><br>
+
+            Website: <input type="text" name="website" value="">
+            <br><br>
+
+            Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+            <br><br>
+
+            Gender:
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="non_binary") echo "checked";?> value="non_binary">Non-binary
+            <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
+            <br><br>
+            <input type="submit" name="submit" value="Submit">  
+        </form>
+
+        <h1> Back to main page -> <a href="main_page.html">"CASKET"</a></h1> 
 
     </body>
 
