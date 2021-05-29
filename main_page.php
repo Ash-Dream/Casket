@@ -5,43 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CASKET</title>
-
-        <script src="main_script.js"></script>
+        
+        
+        <link rel="stylesheet" href="layout\styles\styles.css">
+        
+        
+        <script src="layout\scripts\main_script.js"></script>
 
     </head>
     <body>
 
-        <h1> WELCOME TO THE <a href="main_page.html">CASKET</a></h1> 
+
+
+        <h1> WELCOME TO THE <a href="main_page.php">CASKET</a></h1> 
         <br>
-        <h1> <a href="login_page.php">Log-in page</a> </h1>
-        <p> Look for everything you need </p>
-        <img src="Images/damn_yes.jpg" height="400" width="400" alt="herewego.jpg">
-        <?php
-$servername = "localhost";
-$username = "root";
-$password = "390iva200";
+        <div id="tabs">
+            <ul>
+                <li><a href="main_page.php"><span>Main page</span></a></li>
+                <li><a href="login_page.php"><span>Login page</span></a></li>
+            </ul>
+        </div>
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password);
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+        <div id="main_content">
+            <br>
+            <p> Look for everything you need </p>
+            <img src="Images/damn_yes.jpg" height="400" width="400" alt="herewego.jpg">
+            
+            <form method="get" action="db_engine.php"> 
+            
+            </form>
+        </div>
 
-// Create database
-$sql = "CREATE DATABASE CasketDB";
-if (mysqli_query($conn, $sql)) {
-  echo "Database created successfully";
-} else {
-  echo "Error creating database: " . mysqli_error($conn);
-}
+        <div id="ft">
+             <div id="footer">Footer</div>
+        </div>
 
-mysqli_close($conn);
-?>
-
-        <script> 
-
-        </script>
-        
     </body>
 </html>
